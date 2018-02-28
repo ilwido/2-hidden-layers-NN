@@ -1,11 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#testing the neuarl network with iris data set
 import NeuralNetwork as nn
 
 
-#irisNN = nn.NeuralNetwork([4,5,4,3], learning_rate = 0.01) #100% with 10K epoch
-irisNN = nn.NeuralNetwork([4,5,4,3], learning_rate = 0.01) #100% with 10K epoch
+irisNN = nn.NeuralNetwork([4,5,4,3], learning_rate = 0.01) 
 
 
 all_data = nn.NeuralNetwork.read_data(file_path="iris_training_dataset.data", separator=",")
@@ -21,6 +19,7 @@ for i in output:
 	final_outputs.append(j)
 
 final_outputs = np.array(final_outputs, ndmin=2)
+
 #scale units :)
 inputs =  inputs / np.amax(inputs, axis=0)
 final_outputs =  final_outputs / np.amax(final_outputs, axis=0)
